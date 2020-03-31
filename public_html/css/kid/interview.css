@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#error {
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+.steps-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #5DBDEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('img/logo.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+.progress-container {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.progress {
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    height: 17px;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar {
+    width: 10%;
+    height: 100%;
+    background-color: #6EC6F0;
+    border-radius: 10px;
+    transition: .5s;
+}
+.slider {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.step {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.hide-step {
+    display: none;
+}
+.step-title {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+.step-text {
+    color: white;
+    font-size: 30px;
+    margin-top: 2em;
+    text-align: left;
+}
+.step1-btn {
+    background-color: white;
+    color: #5DBDEB;
+    padding: .5em 2em;
+    font-size: 30px;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 30px;
+    max-width: 330px;
+    margin: 0 auto;
+    margin-top: 4em;
+    transition: .5s;
+}
+.step1-btn:hover {
+    cursor: pointer;
+    border-radius: 20px;
+}
+.steps-bottom {
+    bottom: 12em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 80%;
+    height: 20%;
+}
+.step-arrow {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+.step-arrow:hover {
+    cursor: pointer;
+}
+.step-arrow img {
+    width: 100%;
+}
+.hide-button {
+    display: none;
+}
+.step-input {
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    border: 2px solid #5DBDEB;
+    padding-left: 1em;
+    font-size: 25px;
+    font-weight: bold;
+    color: darkslategrey;
+}
+.gender-choice {
+    display: flex;
+    justify-content: space-evenly;
+}
+.gender-image {
+    width: 40%;
+    opacity: 0.8;
+}
+.gender-image:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+.gender-check {
+    display: none;
+}
+
+.gender-check:checked + label {
+    opacity: 1;
+}
+input[type="radio"] + label {
+    opacity: 0.8;
+}
+input[type="radio"] + label:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+input[type="radio"]:checked + label {
+    opacity: 1;
+}
+.dice-image {
+    width: 70px;
+}
+.step3 {
+    align-items: center;
+    justify-content: center;
+}
+.step3-image {
+    margin: 1em 0em;
+}
+.step3 .step-title {
+    margin-bottom: 2em;
+}
+.step4 {
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+.step4 .step-title {
+    margin-bottom: 2em;
+}
+.age-choice {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2em;
+    width: 100%;
+}
+.age-number {
+    background-color: white;
+    color: #5DBDEB;
+    border-radius: 20px;
+    font-size: 3em;
+    width: 18%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.play {
+    background-color: white;
+    color: #5DBDEB;
+    border-radius: 20px;
+    font-size: 1.5em;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+}
+.step5 {
+    max-width: 1200px;
+    width: 100%;
+}
+.step5 .gender-check {
+    font-size: 1em;
+}
+.read-choice {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+}
+.read {
+    background-color: white;
+    color: #5DBDEB;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 1em;
+    font-size: 3em;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .step-title {
+        font-size: 28px;
+    }
+    .step-text {
+        font-size: 24px;
+        padding: 0 1em;
+    }
+    .step1-btn {
+        font-size: 22px;
+    }
+    .progress {
+        max-width: 350px;
+    }
+    .step-arrow {
+        height: 50px;
+        width: 50px;
+    }
+    .age-number {
+        height: 60px;
+    }
+    .play {
+        font-size: 0.9em;
+        width: 90px;
+        height: 90px;
+    }
+    .read {
+        width: 130px;
+        height: 130px;
+        margin: 0em .2em;
+    }
+    .gender-image {
+        width: 30%;
+    }
+    #error {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 560px) and (max-width: 850px) and (max-height: 600px) {
+    .step-title {
+        font-size: 28px;
+    }
+    .step-text {
+        font-size: 24px;
+        padding: 0 1em;
+        margin-top: 1em;
+    }
+    .step1-btn {
+        font-size: 22px;
+        margin-top: 1em;
+    }
+    .progress {
+        max-width: 550px;
+    }
+    .step-arrow {
+        height: 50px;
+        width: 50px;
+    }
+    .gender-choice {
+        margin-top: 0.5em;
+    }
+    .step3 .step-title {
+        margin-bottom: 0;
+    }
+    .step4 .step-title{
+        margin-bottom: 0;
+    }
+    .step4 {
+        padding-bottom: 1.9em;
+    }
+    .age-number {
+        height: 70px;
+    }
+    .age-choice {
+        margin-bottom: 0em;
+    }
+    .play {
+        font-size: 1em;
+        width: 120px;
+        height: 120px;
+    }
+    .read-choice {
+        margin-bottom: 0em;
+        padding-bottom: 5em;
+    }
+    .read {
+        width: 110px;
+        height: 110px;
+        margin: 0em .2em;
+        font-size: 2em;
+    }
+    .gender-image {
+        width: 30%;
+    }
+    .step8 {
+        margin-top: 1.9em;
+    }
+    #error {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 600px) and (min-height: 601px) and (max-width: 1024px) {
+    .step-title {
+        font-size: 42px;
+    }
+    .step-text {
+        font-size: 34px;
+        padding: 0 1em;
+        margin-top: 1em;
+    }
+    .step1-btn {
+        font-size: 30px;
+        margin-top: 1em;
+    }
+    .progress {
+        max-width: 700px;
+    }
+    .step-arrow {
+        height: 50px;
+        width: 50px;
+    }
+    .age-number {
+        height: 130px;
+    }
+    .play {
+        width: 180px;
+        height: 180px;
+    }
+    #error {
+        font-size: 20px;
+    }
+    
+}
+@media screen and (max-width: 450px) and (min-height: 421px) and (max-height: 600px) {
+    .step-text {
+        font-size: 20px;
+    }
+    .step-title {
+        font-size: 25px;
+    }
+    .step1-btn {
+        font-size: 20px;
+        margin-top: 2em;
+    }
+    .progress {
+        max-width: 300px;
+    }
+    .step-input {
+        width: 90%;
+    }
+    .step3 .step-title {
+        margin-bottom: 0;
+    }
+    .step4 .step-title {
+        margin-bottom: 0;
+    }
+    .age-number {
+        height: 60px;
+    }
+    .play {
+        font-size: 0.9em;
+        width: 75px;
+        height: 75px;
+    }
+    .read {
+        width: 110px;
+        height: 110px;
+        margin: 0em .2em;
+        font-size: 2em;
+    }
+    .gender-image {
+        width: 30%;
+    }
+    #error {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 600px) and (max-height: 420px) {
+    .step-text {
+        font-size: 20px;
+    }
+    .step-title {
+        font-size: 23px;
+    }
+    .step1-btn {
+        font-size: 20px;
+        margin-top: 1em;
+    }
+    .progress {
+        max-width: 450px;
+    }
+    .gender-choice {
+        margin-top: 0.5em;
+    }
+    .step3-image {
+        margin: 0;
+    }
+    .step3 .step-title{
+        margin-bottom: 0;
+    }
+    .step4 .step-title{
+        margin-bottom: 0;
+    }
+    .dice-image {
+        width: 50px;
+    }
+    .step4 {
+        padding-bottom: 1.9em;
+    }
+    .age-number {
+        height: 70px;
+        font-size: 2.2em;
+    }
+    .play {
+        font-size: 1em;
+        width: 100px;
+        height: 100px;
+    }
+    .read {
+        width: 90px;
+        height: 90px;
+        margin: 0em .2em;
+        font-size: 2em;
+    }
+    .gender-image {
+        width: 30%;
+    }
+    .step6 {
+        margin-top: 1.9em;
+    }
+    .step7 {
+        margin-top: 1.9em;
+    }
+    .step8 {
+        margin-top: 1.9em;
+    }
+    #error {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,26 @@
+<!-- <?=__FILE__ ?> -->
+<div class="page-div">
+    <div class="div-1">
+        <img src="img/user-icon.png" alt="User">
+    </div>
+    <div class="div-2">
+        <h2><?=$t->_('sign_in'); ?></h2>
+    </div>
+    <div class="div-3">
+        <form class="sign-in">
+            <input type="email" name="email" placeholder="E-Mail"><br>
+            <input type="password" name="password" placeholder="<?=$t->_('password')?>"><br>
+            <div class="terms">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                    <label class="custom-control-label" for="defaultUnchecked"><div class="label-border"><img class="check-icon" src="img/check.png" alt="" /></div></label>
+                    <span class="span1"> <?=$t->_('agree')?> <strong><a href="#"><?=$t->_('terms_conditions')?></a></strong></span>
+                </div>
+
+                <input type="submit" name="" value="<?=$t->_('create_account')?>"><br>
+                <span class="span2"><?=$t->_('have_account')?>? &nbsp </span><span class="span1"><?=$t->_('sign_in')?></span>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

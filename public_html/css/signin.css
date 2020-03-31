@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto , sans-serif;
+}
+.page-div{
+    background-color: #5dbdeb;
+    width: 100%;
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.div-1{
+    text-align: center;
+    padding-top: 5%;
+}
+.div-1 img {
+    width: 100%;
+    max-width: 100px;
+}
+.div-2{
+    text-align: center;
+    margin-top: 3%;
+}
+.div-2>h2{
+    color: white;
+    font-size: 2.5em;
+}
+.div-3{
+    text-align: center;
+    margin-top: 10%;
+}
+.sign-in>input{
+    border: none;
+    border-radius: 5px;
+    margin-top: 2%;
+    font-size: 20px;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    height: 40px;
+}
+.custom-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.custom-control-label {
+    margin-right: 3px;
+}
+#defaultUnchecked:checked + label .check-icon {
+    display: block;
+}
+.check-icon {
+    width: 80%;
+    align-self: center;
+    display: none;
+}
+.custom-control-input {
+    display: none;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.label-border {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    border: 2px solid #5DBDEB;
+}
+.terms{
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+[type=submit]:not(:disabled){
+    border-radius: 20px;
+    font-size: 20px;
+    /*background-image: linear-gradient(135deg, #8A2AE3 , #7E23E3, #3C01F3);*/
+    background-color: #5DBDEB;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+.span1{
+    font-size: 22px;
+    font-weight: lighter;
+    color: #ABB6E0;
+}
+.span1 a {
+    color: #5dbdeb;
+    text-decoration: none;
+}
+.span1 strong {
+    color: #5DBDEB;
+}
+.span2{
+    font-size: 20px;
+    color: #ABB6E0;
+}
+.span2 a {
+    color: #5DBDEB;
+    text-decoration: none;
+}
+.span2 strong {
+    color: #5DBDEB;
+}
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 992px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .terms{
+        width: 70%;
+    }
+    .custom-control-label::before {
+        top: .8rem;
+    }
+    .custom-control-label::after {
+        top: .8rem;
+    }
+    .div-1 img {
+        max-width: 70px;
+    }
+}
+@media screen and (max-width: 645px) {
+    .terms{
+        width: 80%;
+    }
+    [type=checkbox]{
+        height: 18px;
+    }
+    .span1{
+        font-size: 20px;
+    }
+    .span2{
+        font-size: 16px;
+    }
+    .custom-control-label::before {
+        top: .57rem;
+    }
+    .custom-control-label::after{
+        top: .56rem;
+    }
+    .div-1 img {
+        max-width: 70px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .terms{
+        width: 90%;
+    }
+    [type=checkbox]{
+        height: 16px;
+    }
+    .span1{
+        font-size: 16px;
+    }
+    .span2{
+        font-size: 16px;
+    }
+    .custom-control-label::before {
+        top: .45rem;
+    }
+    .custom-control-label::after {
+        top: .45rem;
+    }
+    .div-1 img {
+        max-width: 70px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .terms{
+        width: 90%;
+    }
+    [type=checkbox]{
+        height: 15px;
+    }
+    .span1{
+        font-size: 16px;
+    }
+    .span2{
+        font-size: 16px;
+    }
+    .custom-control-label::after {
+        top: .4rem;
+    }
+    .custom-control-label::before {
+        top: .4rem;
+    }
+    .div-1 img {
+        max-width: 70px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .terms{
+        width: 90%;
+    }
+    [type=checkbox]{
+        height: 13.5px;
+    }
+    .span1{
+        font-size: 13px;
+    }
+    .span2{
+        font-size: 13px;
+    }
+    .div-1 img {
+        max-width: 70px;
+    }
+}
+@media (orientation: landscape) and (max-width: 1024px) {
+    .page-div {
+        height: auto;
+    }
+}

@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+html , body {
+    overflow-x: hidden;
+}
+.app {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100px;
+    background-color: #5DBDEB;
+    position: fixed;
+    top: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 99;
+}
+.header-title {
+    color: white;
+    font-size: 3em;
+}
+.logout-button {
+    position: absolute;
+    right: 2em;
+}
+.app-footer {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    min-height: 100px;
+    border-top: 1px solid lightgrey;
+    position: fixed;
+    bottom: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 99;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+.footer-notifications {
+    position: relative;
+}
+.footer-icon {
+    min-width: 80px;
+}
+.notif-number {
+    position: absolute;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    right: 5px;
+}
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.user-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 3em 2em;
+    position: relative;
+}
+.profile-image {
+    border: 6px solid #5DBDEB;
+    border-radius: 50%;
+    padding: .5em;
+    position: relative;
+}
+.profile-image img {
+    min-width: 160px;
+}
+.profile-name {
+    position: absolute;
+    bottom: -45px;
+    right: 30px;
+    color: #5DBDEB;
+}
+.profile-playing {
+    color: #5DBDEB;
+    margin-left: 1em;
+    font-weight: lighter;
+    font-size: 2em;
+    margin-top: 2em;
+}
+.active-icon {
+    background-color: #A8D08C;
+    border: 2px solid #B1AEAE;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+}
+.profile-msg-icon {
+    position: absolute;
+    top: -20px;
+    right: -55px;
+}
+.profile-msg-icon img {
+    min-width: 0;
+    max-width: 100px;
+}
+.teacher-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2E6CA4;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    top: 1.5em;
+    right: 4.5em;
+}
+.graph-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.graph-text {
+    font-size: 1.5em;
+    text-align: center;
+}
+.stats-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em 2em;
+}
+.stats {
+    display: grid;
+    grid-template-columns: minmax(120px , 180px) minmax(200px, 490px);
+    padding: .5em 0em;
+}
+.stats-title {
+    font-size: 1.5em;
+}
+.bar-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.bar-stats {
+    height: 14px;
+    position: relative;
+}
+.bar-stats span {
+    position: absolute;
+    right: -60px;
+    top: -7px;
+    font-size: 1.5em;
+}
+.stats-bar {
+    height: 10px;
+    
+}
+.piano-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5em 0 0 0em;
+}
+.tab-choice {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 180px));
+    width: 100%;
+    justify-items: flex-start;
+    padding-left: 2em;
+}
+.tab-box span {
+    font-size: 2em;
+    color: #D3D1D1;
+}
+.tab-box .active {
+    color: black;
+}
+.tabs-container {
+    width: 100%;
+}
+.tab {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-left: 1em;
+    scroll-behavior: smooth;
+}
+.tab-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 200px;
+}
+/*
+.tab::-webkit-scrollbar {
+    display: none;
+}
+*/
+.tab-image {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* MOBILE DEVIECES */
+@media screen and (max-width: 600px) {
+    .app-header {
+        min-height: 60px;
+    }
+    .header-title {
+        font-size: 2em;
+    }
+    .content {
+        margin-top: 60px;
+    }
+    .logout-button img {
+        height: 40px;
+    }
+    .app {
+        height: auto;
+        overflow: hidden;
+    }
+    .profile-image img {
+        min-width: 50px;
+        width: 70px;
+    }
+    .user-container {
+        padding: 1em 1em;
+    }
+    .active-icon {
+        width: 20px;
+        height: 20px;
+        right: 4px;
+    }
+    .profile-msg-icon img {
+        min-width: 0 !important;
+        max-width: 40px !important;
+        width: 100% !important;
+    }
+    .profile-msg-icon {
+        right: -35px;
+    }
+    .teacher-icon {
+        top: 1em;
+        right: 3em;
+        font-size: 1em;
+    }
+    .teacher-icon img {
+        max-width: 45px;
+    }
+    .profile-playing {
+        font-size: 1.4em;
+    }
+    .profile-name {
+        font-size: 1.5em;
+        bottom: -30px;
+        right: -3px;
+    }
+    .graph-text {
+        font-size: 1em;
+        text-align: center;
+    }
+    .graph-container {
+        padding-top: 1.5em;
+        flex-direction: column-reverse;
+    }
+    .graph-image {
+        max-width: 180px;
+    }
+    .stats-container {
+        padding: 1em 0.5em;
+    }
+    .stats-title, .stats-percentage {
+        font-size: 1em;
+    }
+    .stats {
+        grid-template-columns: minmax(100px , 100px) minmax(200px, 205px);
+    }
+    .stats-bar {
+        max-width: 200px;
+    }
+    .tab-box span {
+        font-size: 1em;
+    }
+    .tab-image {
+        max-width: 90px;
+    }
+    .tab {
+        padding-left: .5em;
+    }
+    .tab-box {
+        min-width: 90px;
+    }
+    .app-footer {
+        min-height: 70px;
+        margin-top: 1em;
+    }
+    .bar-stats span {
+        right: -43px;
+        top: -2px;
+        font-size: 1em;
+    }
+    .footer-icon {
+        min-width: 40px;
+    }
+}
+/* MOBILE LANDSCAPE */
+@media screen and (min-width: 560px) and (max-width: 850px) and (max-height: 600px) {
+    .app-header {
+        min-height: 60px;
+    }
+    .header-title {
+        font-size: 2em;
+    }
+    .logout-button img {
+        height: 40px;
+    }
+    .content {
+        margin-top: 60px;
+    }
+    .app {
+        height: auto;
+        overflow: hidden;
+    }
+    .profile-image img {
+        min-width: 50px;
+        width: 50px;
+    }
+    .user-container {
+        padding: 1em 1em;
+    }
+    .active-icon {
+        width: 20px;
+        height: 20px;
+        right: 4px;
+    }
+    .profile-msg-icon img {
+        min-width: 0 !important;
+        max-width: 40px !important;
+        width: 100% !important;
+    }
+    .profile-msg-icon {
+        right: -35px;
+    }
+    .teacher-icon {
+        top: 1em;
+        right: 3em;
+        font-size: 1em;
+    }
+    .teacher-icon img {
+        max-width: 45px;
+    }
+    .profile-playing {
+        font-size: 1em;
+    }
+    .profile-name {
+        font-size: 1em;
+        bottom: -25px;
+        right: 5px;
+    }
+    .graph-text {
+        font-size: 1em;
+        text-align: center;
+    }
+    .graph-image {
+        max-width: 180px;
+    }
+    .stats-container {
+        padding: 1em 0.5em;
+    }
+    .stats-title, .stats-percentage {
+        font-size: 1em;
+    }
+    .stats {
+        grid-template-columns: minmax(100px , 100px) minmax(200px, 450px);
+    }
+    .tab-box span {
+        font-size: 1em;
+    }
+    .tab-image {
+        max-width: 150px;
+    }
+    .tab {
+        padding-left: .5em;
+    }
+    .tab-box {
+        min-width: 90px
+    }
+    .app-footer {
+        min-height: 70px;
+        margin-top: 1em;
+    }
+    .bar-stats span {
+        right: -43px;
+        top: -2px;
+        font-size: 1em;
+    }
+    .footer-icon {
+        min-width: 40px;
+    }
+}
+@media screen and (min-width: 600px) and (min-height: 601px) and (max-width: 1024px) {
+  
+}
+/* IPHONE 5/SE */
+@media screen and (max-width: 450px) and (min-height: 421px) and (max-height: 600px) {
+    .app-header {
+        min-height: 60px;
+    }
+    .header-title {
+        font-size: 2em;
+    }
+    .logout-button img {
+        height: 40px;
+    }
+    .content {
+        margin-top: 60px;
+    }
+    .app {
+        height: auto;
+        overflow: hidden;
+    }
+    .profile-image img {
+        min-width: 50px;
+        width: 50px;
+    }
+    .user-container {
+        padding: 1em 1em;
+    }
+    .active-icon {
+        width: 20px;
+        height: 20px;
+        right: 4px;
+    }
+    .profile-msg-icon img {
+        min-width: 0 !important;
+        max-width: 40px !important;
+        width: 100% !important;
+    }
+    .profile-msg-icon {
+        right: -35px;
+    }
+    .teacher-icon {
+        top: 1em;
+        right: 3em;
+        font-size: 1em;
+    }
+    .teacher-icon img {
+        max-width: 45px;
+    }
+    .profile-playing {
+        font-size: 1em;
+    }
+    .profile-name {
+        font-size: 1em;
+        bottom: -25px;
+        right: 5px;
+    }
+    .graph-text {
+        font-size: 1em;
+        text-align: center;
+    }
+    .graph-image {
+        max-width: 180px;
+    }
+    .graph-container {
+        flex-direction: column-reverse;
+    }
+    .stats-container {
+        padding: 1em 0.5em;
+    }
+    .stats-title, .stats-percentage {
+        font-size: 1em;
+    }
+    .stats {
+        grid-template-columns: minmax(100px , 100px) minmax(150px, 150px);
+    }
+    .stats-bar {
+        max-width: 150px;
+    }
+    .tab-choice {
+        padding-left: .5em;
+        grid-template-columns: repeat(4, minmax(60px, 180px));
+    }
+    .tab-box {
+        min-width: 80px;
+    }
+    .tab-box span {
+        font-size: 1em;
+    }
+    .tab-image {
+        max-width: 90px;
+    }
+    .tab {
+        padding-left: .5em;
+    }
+    .app-footer {
+        min-height: 70px;
+        margin-top: 1em;
+    }
+}
+@media screen and (max-width: 600px) and (max-height: 420px) {
+    .app-header {
+        min-height: 60px;
+    }
+    .logout-button img {
+        height: 40px;
+    }
+    .content {
+        margin-top: 60px;
+    }
+    .app {
+        height: auto;
+        overflow: hidden;
+    }
+    .profile-image img {
+        min-width: 50px;
+        width: 50px;
+    }
+    .user-container {
+        padding: 1em 1em;
+    }
+    .active-icon {
+        width: 20px;
+        height: 20px;
+        right: 4px;
+    }
+    .profile-msg-icon img {
+        min-width: 0 !important;
+        max-width: 40px !important;
+        width: 100% !important;
+    }
+    .profile-msg-icon {
+        right: -35px;
+    }
+    .teacher-icon {
+        top: 1em;
+        right: 3em;
+        font-size: 1em;
+    }
+    .teacher-icon img {
+        max-width: 45px;
+    }
+    .profile-playing {
+        font-size: 1em;
+    }
+    .profile-name {
+        font-size: 1em;
+        bottom: -25px;
+        right: 5px;
+    }
+    .graph-text {
+        font-size: 1em;
+        text-align: center;
+    }
+    .graph-image {
+        max-width: 180px;
+    }
+    .stats-container {
+        padding: 1em 0.5em;
+    }
+    .stats-title, .stats-percentage {
+        font-size: 1em;
+    }
+    .stats {
+        grid-template-columns: minmax(100px , 100px) minmax(200px, 400px);
+    }
+    .tab-choice {
+        padding-left: .5em;
+        grid-template-columns: repeat(4, minmax(60px, 180px));
+    }
+    .tab-box span {
+        font-size: 1em;
+    }
+    .tab-image {
+        max-width: 140px;
+    }
+    .tab {
+        padding-left: .5em;
+    }
+    .tab-box {
+        min-width: 140px;
+    }
+    .app-footer {
+        min-height: 70px;
+        margin-top: 1em;
+    }
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+progress[value]::-webkit-progress-bar {
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: none;
+  }
+.bar-correct .bar-stats {
+    background-color: #B3C6E7;
+}
+.bar-perf .bar-stats {
+    background-color: #5DBDEB;
+}
+.bar-rhythm .bar-stats {
+    background-color: #8DA9DB;
+}
+.bar-sight .bar-stats {
+    background-color: #BBD6EE;
+}
+.bar-ear .bar-stats {
+    background-color: #2E75B5;
+}
+.bar-theory .bar-stats {
+    background-color: #ACB8CA;
+}
