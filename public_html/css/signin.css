@@ -226,3 +226,48 @@
         height: auto;
     }
 }
+@media (min-width: 600px) {
+    .page-div {
+        max-width: initial;
+        margin: initial;
+        min-height: 100vh;
+        height: initial;
+    }
+    .div-1>img {
+        width: 55px;
+    }
+    .div-2>h2 {
+        font-size: 2em;
+    }
+    .div-2, .div-3 {
+        margin-top:  10px;
+    }
+    .sign-in>input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding-left: 15px;
+    }
+    .terms {
+        width: 300px;
+        padding: 20px;
+        margin: 30px 0;
+    }
+    .custom-control-label {
+        margin-right: 10px;
+    }
+    .span1, .span2 {
+        font-size: 15px;
+    }
+    .label-border {
+        width: 20px;
+        height: 20px;
+    }
+    [type=submit]:not(:disabled) {
+        padding: 7px;
+        padding-left: 22px;
+        padding-right: 22px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+}
