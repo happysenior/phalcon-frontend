@@ -21,7 +21,9 @@ class KidController extends I18nController
         $this->view->action =  $this->di->getRouter()->getActionName();
         parent::initialize();
         $this->assets->addCss('css/kid/interview.css');
+        $this->assets->addJs('js/init.js');
         $this->assets->addJs('js/kid/interview.js');
+
     }
 
     public function overviewAction()

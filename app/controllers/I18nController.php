@@ -18,6 +18,7 @@ class I18nController extends ControllerBase
 {
     public function initialize()
     {
+
         $this->view->t = $this->getTranslation();
     }
 

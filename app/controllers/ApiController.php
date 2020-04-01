@@ -17,6 +17,8 @@ class ApiController extends ControllerBase
         $authUser = $this->request->getServer('PHP_AUTH_USER');
         $authPw = $this->request->getServer('PHP_AUTH_PW');
         $authorizationHeader = $this->request->getHeader('Authorization');
+        $headers = $this->request->getHeaders();
+        //var_dump($headers);
         $options = [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
@@ -45,9 +47,7 @@ class ApiController extends ControllerBase
         if($path2!=null) $suffix.='/'.$path2;
         if($path3!=null) $suffix.='/'.$path3;
         if($path4!=null) $suffix.='/'.$path4;
-
         $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl.trim($suffix);
-
         curl_setopt_array($this->curl, $this->curlOptions);
         $response = curl_exec($this->curl);
         $response = $this->handleHeaders($response);

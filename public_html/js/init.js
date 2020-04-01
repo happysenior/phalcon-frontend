@@ -1,23 +1,32 @@
+var apiEndpoints = {
+  getCredentials: '/auth/credentials',
+  getAppToken: '/v1/auth/apptoken',
+  getUUID: '/v1/auth/session',
+
+}
+
+var colors = {
+  grey: '#4B515D', 
+}
 $(document).ready(
+  
   async function() {
-  var credentials = await
-  $.get("/auth/credentials").promise();
-  credentials = JSON.parse(credentials);
 
-  // console.log(credentials);
-  var auth = "Basic " + btoa(credentials.apiKey + ":" + credentials.apiSecret);
-  // console.log(auth);
-  var settings = {
-      "url": "/v1/auth/apptoken", // please replace hard coded URL with config value!
-      "method": "GET",
-      "timeout": 0,
-      "headers": {
-          "Authorization": auth
-      },
-  };
+    checkAuthenticate();
 
-  $.ajax(settings).done(function (response) {
-      console.log(response);
-  });
-});
+  }
+);
 
+
+function checkAuthenticate() {
+  var access_token = localStorage.getItem('access_token');
+  var expires = localStorage.getItem("expires");
+
+  if(access_token && expires && new Date(expires)<new Date()) {
+
+  } else {
+    if(window.location.pathname != '/logon') {
+      window.location = '/logon';
+    }
+  }
+}

@@ -7,9 +7,9 @@ class LogonController extends I18nController
     {
         parent::initialize();
         $this->assets->addCss('css/logon/index.css');
+        $this->assets->addJs('js/init.js');
         $this->assets->addJs('js/logon/index.js');
     }
-
 
     public function indexAction()
     {
