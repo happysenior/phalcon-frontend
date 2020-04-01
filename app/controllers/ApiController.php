@@ -17,7 +17,6 @@ class ApiController extends ControllerBase
         $authUser = $this->request->getServer('PHP_AUTH_USER');
         $authPw = $this->request->getServer('PHP_AUTH_PW');
         $authorizationHeader = $this->request->getHeader('Authorization');
-
         $options = [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
@@ -41,12 +40,13 @@ class ApiController extends ControllerBase
     {
         $this->curlOptions[CURLOPT_CUSTOMREQUEST] = "GET";
 
-        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl
-            . DIRECTORY_SEPARATOR
-            . trim(
-                implode(DIRECTORY_SEPARATOR, [$path0, $path1, $path2, $path3, $path4]),
-                ' /'
-            );
+        $suffix = '/'.$path0;
+        if($path1!=null) $suffix.='/'.$path1;
+        if($path2!=null) $suffix.='/'.$path2;
+        if($path3!=null) $suffix.='/'.$path3;
+        if($path4!=null) $suffix.='/'.$path4;
+
+        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl.trim($suffix);
 
         curl_setopt_array($this->curl, $this->curlOptions);
         $response = curl_exec($this->curl);
@@ -65,7 +65,9 @@ class ApiController extends ControllerBase
         $this->response->setContentType(curl_getinfo($this->curl, CURLINFO_CONTENT_TYPE));
         $this->response->setStatusCode(curl_getinfo($this->curl, CURLINFO_HTTP_CODE));
         foreach (explode("\r\n", $headerString) as $header) {
-            list($k, $v) = explode(":", $header, 2);
+            $arr = explode(":", $header);
+            if(count($arr)<2) continue;
+            list ($k, $v) = $arr;
             if (strstr($k, 'Disposition')) {
                 $this->response->setHeader(trim($k), trim($v));
             }
