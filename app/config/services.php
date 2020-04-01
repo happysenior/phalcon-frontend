@@ -37,8 +37,10 @@ $di->setShared('url', function () {
     return $url;
 });
 
-$di->set('router', function(){
+$di->set('router', function($di){
+
     require __DIR__.'/routes.php';
+
     return $router;
 });
 

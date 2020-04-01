@@ -20,8 +20,6 @@ class I18nController extends ControllerBase
     {
 
         $this->view->t = $this->getTranslation();
-        $this->assets->addCss('css/all.min.css');
-        $this->assets->addCss('css/fontawesome.min.css');
     }
 
     protected function getTranslation()

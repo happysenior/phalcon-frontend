@@ -8,14 +8,21 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
 return new \Phalcon\Config(
     [
-        'database' => [
-            'adapter' => 'Mysql',
-            'host' => 'localhost',
-            'username' => 'root',
-            'password' => '',
-            'dbname' => 'test',
-            'charset' => 'utf8',
+        'api' => [
+            'apiUrl' => 'https://api.pianini.app/v1'
         ],
+        'apiAuth' => [
+            'apiKey' => 'AamqWQHk5figXT5B837Xhnwjvo5cqTr1yXoP3KKy7DgU2dvCjvTT733U87HcubxV244YLESX3L6XV7T',
+            'apiSecret' => 'nfLK1SqfCBXp0rE1FMPnA6OQeclMtAtwKVOwH6LAQs3YtnqRjaD9X03tBGLydUUSl9YxsYe05',
+        ],
+//        'database' => [
+//            'adapter' => 'Mysql',
+//            'host' => 'localhost',
+//            'username' => 'root',
+//            'password' => '',
+//            'dbname' => 'test',
+//            'charset' => 'utf8',
+//        ],
         'application' => [
             'appDir' => APP_PATH . '/',
             'controllersDir' => APP_PATH . '/controllers/',
@@ -28,9 +35,10 @@ return new \Phalcon\Config(
             'timeZone' => 'UTC',
 
             // This allows the baseUri to be understand project paths that are not in the root directory
-            // of the webpspace.  This will break if the public_html/index.php entry point is moved or
+            // of the webpspace.  This will break if the public/index.php entry point is moved or
             // possibly if the web server rewrite rules are changed. This can also be set to a static path.
-            'baseUri' => '/' // preg_replace('/public_html([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+            //'baseUri' => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+            'baseUri' => '/'
         ],
 
         'translation' => [

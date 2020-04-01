@@ -8,10 +8,10 @@
 
 $messages = [
     'Great' => 'Fantastic',
-    'sign_in' => 'Sign In',
+    'login' => 'Login',
     'agree' => 'I read and agree to',
     'terms_conditions' => 'Terms & Conditions',
     'have_account' => 'Already have an account',
-    'create_account' => 'CREATE ACCOUNT',
+    'register' => 'Register',
     'password' => 'Password'
 ];
