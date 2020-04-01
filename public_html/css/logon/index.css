@@ -1,3 +1,28 @@
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -97,10 +122,12 @@
     font-size: 22px;
     font-weight: lighter;
     color: #ABB6E0;
+    font-family: Poppins;
 }
 .span1 a {
     color: #5dbdeb;
     text-decoration: none;
+    font-family: Poppins;
 }
 .span1 strong {
     color: #5DBDEB;
@@ -108,10 +135,12 @@
 .span2{
     font-size: 20px;
     color: #ABB6E0;
+    font-family: Poppins;
 }
 .span2 a {
     color: #5DBDEB;
     text-decoration: none;
+    font-family: Poppins;
 }
 .span2 strong {
     color: #5DBDEB;
@@ -134,6 +163,25 @@
     .div-1 img {
         max-width: 70px;
     }
+
+    .sign-in .terms {
+        max-width: 500px;
+    }
+
+    .sign-in .terms .custom-checkbox {
+        position: relative;
+    }
+
+    .sign-in .terms .custom-checkbox .span1 {
+        padding: 0 60px;
+    }
+    
+    .sign-in .terms .custom-checkbox .custom-control-label {
+        position: absolute;
+        top: 0;
+        left: 15px;
+    }
+
 }
 @media screen and (max-width: 645px) {
     .terms{
@@ -157,6 +205,7 @@
     .div-1 img {
         max-width: 70px;
     }
+
 }
 @media screen and (max-width: 470px) {
     .terms{
@@ -179,6 +228,15 @@
     }
     .div-1 img {
         max-width: 70px;
+    }
+
+    .sign-in .terms .custom-checkbox .custom-control-label {
+        top: 2px;
+    }
+
+    .sign-in .terms .custom-checkbox .custom-control-label .label-border {
+        width: 15px;
+        height: 15px;
     }
 }
 @media screen and (max-width: 370px) {
