@@ -81,12 +81,21 @@ class ApiController extends ControllerBase
         if ($this->request->getHeader("Content-Type") == "application/x-www-form-urlencoded") {
             $this->curlOptions[CURLOPT_HTTPHEADER][] = "Content-Type: application/x-www-form-urlencoded";
         }
-        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl
-            . DIRECTORY_SEPARATOR
-            . trim(
-                implode(DIRECTORY_SEPARATOR, [$path0, $path1, $path2, $path3, $path4]),
-                ' /'
-            );
+
+        // $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl
+        //     . DIRECTORY_SEPARATOR
+        //     . trim(
+        //         implode(DIRECTORY_SEPARATOR, [$path0, $path1, $path2, $path3, $path4]),
+        //         ' /'
+        //     );
+
+        $suffix = '/'.$path0;
+        if($path1!=null) $suffix.='/'.$path1;
+        if($path2!=null) $suffix.='/'.$path2;
+        if($path3!=null) $suffix.='/'.$path3;
+        if($path4!=null) $suffix.='/'.$path4;
+        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl.trim($suffix);
+
         $this->curlOptions[CURLOPT_POSTFIELDS] = urldecode(http_build_query($this->request->getPost()));
         if ($this->request->hasFiles()) {
             /** @var \Phalcon\Http\Request\FileInterface $file */
@@ -111,12 +120,19 @@ class ApiController extends ControllerBase
         if ($this->request->getHeader("Content-Type") == "application/x-www-form-urlencoded") {
             $this->curlOptions[CURLOPT_HTTPHEADER][] = "Content-Type: application/x-www-form-urlencoded";
         }
-        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl
-            . DIRECTORY_SEPARATOR
-            . trim(
-                implode(DIRECTORY_SEPARATOR, [$path0, $path1, $path2, $path3, $path4]),
-                ' /'
-            );
+        // $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl
+        //     . DIRECTORY_SEPARATOR
+        //     . trim(
+        //         implode(DIRECTORY_SEPARATOR, [$path0, $path1, $path2, $path3, $path4]),
+        //         ' /'
+        //     );
+        $suffix = '/'.$path0;
+        if($path1!=null) $suffix.='/'.$path1;
+        if($path2!=null) $suffix.='/'.$path2;
+        if($path3!=null) $suffix.='/'.$path3;
+        if($path4!=null) $suffix.='/'.$path4;
+        $this->curlOptions[CURLOPT_URL] = $this->config->api->apiUrl.trim($suffix);
+
         $this->curlOptions[CURLOPT_POSTFIELDS] = urldecode(http_build_query($this->request->getPut()));
 
         curl_setopt_array($this->curl, $this->curlOptions);
