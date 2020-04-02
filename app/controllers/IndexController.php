@@ -7,6 +7,7 @@ class IndexController extends I18nController
 
     public function indexAction()
     {
+        /*
         if(!$this->session->adult_token) {
             $this->dispatcher->forward(
                 [
@@ -22,6 +23,13 @@ class IndexController extends I18nController
                 ]
             );
         }
+        */
+        $this->dispatcher->forward(
+            [
+                "controller" => "kid",
+                "action" => "interview"
+            ]
+        );
     }
 }
 
