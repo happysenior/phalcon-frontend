@@ -145,6 +145,18 @@
 .span2 strong {
     color: #5DBDEB;
 }
+
+#checkbox_wrap {
+    transition: all ease .3s;
+}
+
+#checkbox_error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    font-family: Poppins;
+}
+
 @media screen and (max-width: 992px) {
     .container {
         max-width: 992px;

@@ -6,15 +6,16 @@
         <h2><?=$t->_('login'); ?></h2>
     </div>
     <div class="div-3">
-        <form class="sign-in">
-            <input type="email" name="email" placeholder="E-Mail"><br>
-            <input type="password" name="password" placeholder="<?=$t->_('password')?>"><br>
+        <form id="sign-in" class="sign-in">
+            <input type="email" name="email" id="email" required placeholder="E-Mail"><br>
+            <input type="password" name="password" required id="password" placeholder="<?=$t->_('password')?>"><br>
             <div class="terms">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                    <label class="custom-control-label" for="defaultUnchecked"><div class="label-border"><img class="check-icon" src="img/check.png" alt=""></div></label>
+                    <label class="custom-control-label" for="defaultUnchecked"><div id="checkbox_wrap" class="label-border"><img class="check-icon" src="img/check.png" alt=""></div></label>
                     <span class="span1"><?=$t->_('agree')?><strong><a href="#"><?=$t->_('terms_conditions')?></a></strong></span>
                 </div>
+                <p id="checkbox_error">Please read and agree with <strong><a href="#"><?=$t->_('terms_conditions')?></a></strong></p>
 
                 <input id="loginBtn" type="submit" name="" value="<?=$t->_('login')?>" class="btn"><br>
                 <span class="span2"><?=$t->_('have_account')?> <strong><a id="registerBtn" onclick=""><?=$t->_('register')?></a></strong></span>

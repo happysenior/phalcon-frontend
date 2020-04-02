@@ -2,6 +2,7 @@ var apiEndpoints = {
   getCredentials: '/auth/credentials',
   getAppToken: '/v1/auth/apptoken',
   getUUID: '/v1/auth/session',
+  getAdulttoken: '/v1/auth/adulttoken'
 
 }
 
@@ -22,7 +23,10 @@ function checkAuthenticate() {
   var access_token = localStorage.getItem('access_token');
   var expires = localStorage.getItem("expires");
 
-  if(access_token && expires && new Date(expires)<new Date()) {
+  var d1 = new Date(expires);
+  var d2 = new Date();
+
+  if(access_token && expires && d1.getTime() > d2.getTime() ) {
 
   } else {
     if(window.location.pathname != '/logon') {
