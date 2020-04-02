@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pianini</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?= $this->url->get('css/kid/style.css'); ?>">
 </head>
 <body>
     <div class="steps-container">
@@ -33,19 +33,19 @@
                 <div class="gender-choice">
                     <input type="radio" name="gender" id="female" class="gender-check">
                     <label class="gender-image" for="female">
-                        <img src="images/Girl_icon.svg" alt="">
+                        <img src="../img/Girl_icon.svg" alt="">
                     </label>
                     <input type="radio" name="gender" id="male" class="gender-check">
                     <label class="gender-image" for="male">
-                        <img src="images/Boy_icon.svg" alt="">
+                        <img src="../img/Boy_icon.svg" alt="">
                     </label>
                 </div>
             </div>
             <div class="step step3">
                 <h1 class="step-title"><span class="child-name"></span></h1>
-                <img class="step3-image girl-image" src="images/zenska.PNG" alt="">
-                <img class="step3-image boy-image" src="images/Boy_icon.svg" alt="">
-                <img class="dice-image" src="images/Dice_icon.svg" alt="">
+                <img class="step3-image girl-image" src="../img/zenska.PNG" alt="">
+                <img class="step3-image boy-image" src="../img/Boy_icon.svg" alt="">
+                <img class="dice-image" src="../img/Dice_icon.svg" alt="">
             </div>
             <div class="step step4">
                 <h1 class="step-title">What's your child's age?</h1>
@@ -161,16 +161,16 @@
         </form>
         <div class="steps-bottom">
             <div class="step-arrow step-back">
-                <img src="images/Left_arrow_icon.svg" alt="">
+                <img src="../img/Left_arrow_icon.svg" alt="">
             </div>
             <p id="error"></p>
             <div class="step-arrow step-next">
-                <img src="images/Right_arrow_icon.svg" alt="">
+                <img src="../img/Right_arrow_icon.svg" alt="">
             </div>
         </div>
     </div>
 
 
-    <script src="app.js"></script>
+    <script src="<?= $this->url->get('js/kid/interview.js'); ?>"></script>
 </body>
 </html>
