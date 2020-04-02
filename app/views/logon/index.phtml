@@ -7,8 +7,12 @@
     </div>
     <div class="div-3">
         <form id="sign-in" class="sign-in">
-            <input type="email" name="email" id="email" required placeholder="E-Mail"><br>
-            <input type="password" name="password" required id="password" placeholder="<?=$t->_('password')?>"><br>
+            <input type="email" name="email" id="email" required placeholder="E-Mail">
+            <p id="email_error" class="error_message">asdsadas</p>
+            <br>
+            <input type="password" name="password" required id="password" placeholder="<?=$t->_('password')?>">
+            <p id="password_error" class="error_message">asdasd</p>
+            <br>
             <div class="terms">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
@@ -18,7 +22,7 @@
                 <p id="checkbox_error">Please read and agree with <strong><a href="#"><?=$t->_('terms_conditions')?></a></strong></p>
 
                 <input id="loginBtn" type="submit" name="" value="<?=$t->_('login')?>" class="btn"><br>
-                <span class="span2"><?=$t->_('have_account')?> <strong><a id="registerBtn" onclick=""><?=$t->_('register')?></a></strong></span>
+                <span class="span2"><?=$t->_('have_account')?> <strong><a id="registerBtn" href="javascript:void(0);"><?=$t->_('register')?></a></strong></span>
             </div>
         </form>
     </div>

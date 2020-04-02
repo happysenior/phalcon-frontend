@@ -2,7 +2,8 @@ var apiEndpoints = {
   getCredentials: '/auth/credentials',
   getAppToken: '/v1/auth/apptoken',
   getUUID: '/v1/auth/session',
-  getAdulttoken: '/v1/auth/adulttoken'
+  getAdulttoken: '/v1/auth/adulttoken',
+  getAdultlogin: '/v1/auth/adultlogin',
 
 }
 

@@ -12,9 +12,20 @@ const registerEventListeners = () => {
     event.preventDefault();
 
     var email = $("#email").val().trim();
-    var password = $("#password").val();
+    var password = $("#password").val().trim();
 
-    if(email == '' || password == '') {
+    var error = false;
+    if(email == '') {
+      $("#email_error").html('Email is required.').fadeIn(300);
+      error = true;
+    }
+
+    if(password == '') {
+      $("#password_error").html('Password is required.').fadeIn(300);
+      error = true;
+    }
+
+    if(error) {
       return false;
     }
 
@@ -101,5 +112,77 @@ const sessionStart = async function() {
     $("#checkbox_wrap").css('border-color', '#5DBDEB');
     $("#checkbox_error").fadeOut(300);
   });
+
+  $(document).on('click', "#registerBtn", function() {
+    var email = $("#email").val().trim();
+    var password = $("#password").val().trim();
+    var error = false;
+
+    if(email == '') {
+      $("#email_error").html('Email is required.').fadeIn(300);
+      error = true;
+    }
+
+    if(!validateEmail(email)) {
+      $("#email_error").html('Please enter valid email address.').fadeIn(300);
+      error = true;
+    }
+
+    if(password == '') {
+      $("#password_error").html('Password is required.').fadeIn(300);
+      error = true;
+    }
+
+    if(error) {
+      return false;
+    }
+
+    if(!$("#defaultUnchecked").prop('checked')) {
+      $("#checkbox_wrap").css('border-color', 'red');
+      $("#checkbox_error").fadeIn(300);
+      return false;
+    }
+
+    var data = {
+      login: email,
+      secret: password
+    };
+    $.ajax({
+        url: apiEndpoints.getAdultlogin,
+        type: 'POST',
+        data: data,
+        dataType: "json",
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + localStorage.getItem('access_token'));
+        },
+        success: function(data) {
+
+          if(data.login != '') {
+            $("#loginBtn").trigger('click');
+          }
+          
+        },
+        error: function (err) {
+            var data = err.responseJSON
+            if(data.error) {
+              if(data.error == 2) {
+                $("#password_error").html(data.details[0]).fadeIn(300);
+              } else if(data.error == 10002) {
+                $("#email_error").html(data.error_description).fadeIn(300);
+              }
+            }
+        }
+        
+    });
+  });
+
+  $(document).on('keyup', '#sign-in input', function() {
+    $(this).next().empty().fadeOut();
+  });
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
 
 };

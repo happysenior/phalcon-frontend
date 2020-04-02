@@ -84,6 +84,14 @@
 .custom-control-input {
     display: none;
 }
+
+#email_error, #password_error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    font-family: Poppins;
+}
+
 .btn:hover {
     cursor: pointer;
 }
