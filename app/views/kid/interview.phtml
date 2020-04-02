@@ -1,5 +1,14 @@
-<!-- <?=__FILE__ ?> -->
-<div class="steps-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pianini</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="steps-container">
         <div class="progress-container">
             <div class="progress">
                 <div class="bar">
@@ -20,22 +29,23 @@
             </div>
             <div class="step step2">
                 <h1 class="step-title">What is your child's name</h1>
-                <input class="step-input" name="child-name" type="text">
+                <input class="step-input" name="child-name" type="text" onchange="checkStep2()" oninput="checkStep2()" onkeypress="checkStep2()">
                 <div class="gender-choice">
                     <input type="radio" name="gender" id="female" class="gender-check">
                     <label class="gender-image" for="female">
-                        <img src="../img/Girl_icon.svg" alt="">
+                        <img src="images/Girl_icon.svg" alt="">
                     </label>
                     <input type="radio" name="gender" id="male" class="gender-check">
                     <label class="gender-image" for="male">
-                        <img src="../img/Boy_icon.svg" alt="">
+                        <img src="images/Boy_icon.svg" alt="">
                     </label>
                 </div>
             </div>
             <div class="step step3">
-                <h1 class="step-title">Liza-Marie</h1>
-                <img class="step3-image" src="../img/Girl_icon.svg" alt="">
-                <img class="dice-image" src="../img/Dice_icon.svg" alt="">
+                <h1 class="step-title"><span class="child-name"></span></h1>
+                <img class="step3-image girl-image" src="images/zenska.PNG" alt="">
+                <img class="step3-image boy-image" src="images/Boy_icon.svg" alt="">
+                <img class="dice-image" src="images/Dice_icon.svg" alt="">
             </div>
             <div class="step step4">
                 <h1 class="step-title">What's your child's age?</h1>
@@ -63,7 +73,7 @@
                 </div>
             </div>
             <div class="step step5">
-                <h1 class="step-title">What can Cacilia play on the piano</h1>
+                <h1 class="step-title">What can <span class="child-name"></span> play on the piano</h1>
                 <div class="age-choice">
                     <input type="radio" name="play" id="almost-nothing" class="gender-check">
                     <label class="play" for="almost-nothing">
@@ -84,7 +94,7 @@
                 </div>
             </div>
             <div class="step step6">
-                <h1 class="step-title">Can Cacilia read rhythm symbols?</h1>
+                <h1 class="step-title">Can <span class="child-name"></span> read rhythm symbols?</h1>
                 <div class="read-choice">
                     <input type="radio" name="read" id="no" class="gender-check">
                     <label class="read" for="no">
@@ -97,7 +107,7 @@
                 </div>
             </div>
             <div class="step step7">
-                <h1 class="step-title">Does Cacilia read music?</h1>
+                <h1 class="step-title">Does <span class="child-name"></span> read music?</h1>
                 <div class="read-choice">
                     <input type="radio" name="read-music" id="no-read" class="gender-check">
                     <label class="read" for="no-read">
@@ -110,7 +120,7 @@
                 </div>
             </div>
             <div class="step step8">
-                <h1 class="step-title">Should Cacilia participate <br> in Competitions and rankings?</h1>
+                <h1 class="step-title">Should <span class="child-name"></span> participate <br> in Competitions and rankings?</h1>
                 <div class="read-choice">
                     <input type="radio" name="competition" id="competition-no" class="gender-check">
                     <label class="read" for="competition-no">
@@ -122,8 +132,8 @@
                     </label>
                 </div>
             </div>
-            <div class="step step8">
-                <h1 class="step-title">Has Cacilia already a human teacher?</h1>
+            <div class="step step9">
+                <h1 class="step-title">Has <span class="child-name"></span> already a human teacher?</h1>
                 <div class="read-choice">
                     <input type="radio" name="teacher" id="teacher-no" class="gender-check">
                     <label class="read" for="teacher-no">
@@ -135,7 +145,7 @@
                     </label>
                 </div>
             </div>
-            <div class="step step8">
+            <div class="step step10">
                 <h1 class="step-title">Do you want to add another child?</h1>
                 <div class="read-choice">
                     <input type="radio" name="another" id="another-no" class="gender-check">
@@ -151,11 +161,16 @@
         </form>
         <div class="steps-bottom">
             <div class="step-arrow step-back">
-                <img src="../img/Left_arrow_icon.svg" alt="">
+                <img src="images/Left_arrow_icon.svg" alt="">
             </div>
             <p id="error"></p>
             <div class="step-arrow step-next">
-                <img src="../img/Right_arrow_icon.svg" alt="">
+                <img src="images/Right_arrow_icon.svg" alt="">
             </div>
         </div>
     </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
