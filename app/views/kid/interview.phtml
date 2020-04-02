@@ -1,176 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pianini</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= $this->url->get('css/kid/style.css'); ?>">
-</head>
-<body>
-    <div class="steps-container">
-        <div class="progress-container">
-            <div class="progress">
-                <div class="bar">
-                </div>
-            </div>
-        </div>
-        <form class="slider">
-            <div class="step step1">
-                <h1 class="step-title">Create your child's profile</h1>
-                <p class="step-text">
-                    Tell us a bit about your little one so we can tailor the perfect
-                    piano learning experience for her/his needs.
-                </p>
-                <p class="step-text">
-                    This process should take about 2-3 minutes to complete
-                </p>
-                <button type="button" class="step1-btn">great, lets go!</button>
-            </div>
-            <div class="step step2">
-                <h1 class="step-title">What is your child's name</h1>
-                <input class="step-input" name="child-name" type="text" onchange="checkStep2()" oninput="checkStep2()" onkeypress="checkStep2()">
-                <div class="gender-choice">
-                    <input type="radio" name="gender" id="female" class="gender-check">
-                    <label class="gender-image" for="female">
-                        <img src="../img/Girl_icon.svg" alt="">
-                    </label>
-                    <input type="radio" name="gender" id="male" class="gender-check">
-                    <label class="gender-image" for="male">
-                        <img src="../img/Boy_icon.svg" alt="">
-                    </label>
-                </div>
-            </div>
-            <div class="step step3">
-                <h1 class="step-title"><span class="child-name"></span></h1>
-                <img class="step3-image girl-image" src="../img/zenska.PNG" alt="">
-                <img class="step3-image boy-image" src="../img/Boy_icon.svg" alt="">
-                <img class="dice-image" src="../img/Dice_icon.svg" alt="">
-            </div>
-            <div class="step step4">
-                <h1 class="step-title">What's your child's age?</h1>
-                <div class="age-choice">
-                    <input type="radio" name="age" id="3" class="gender-check">
-                    <label class="age-number" for="3">
-                        3
-                    </label>
-                    <input type="radio" name="age" id="4" class="gender-check">
-                    <label class="age-number" for="4">
-                        4
-                    </label>
-                    <input type="radio" name="age" id="5" class="gender-check">
-                    <label class="age-number" for="5">
-                        5
-                    </label>
-                    <input type="radio" name="age" id="6" class="gender-check">
-                    <label class="age-number" for="6">
-                        6
-                    </label>
-                    <input type="radio" name="age" id="7" class="gender-check">
-                    <label class="age-number" for="7">
-                        7
-                    </label>
-                </div>
-            </div>
-            <div class="step step5">
-                <h1 class="step-title">What can <span class="child-name"></span> play on the piano</h1>
-                <div class="age-choice">
-                    <input type="radio" name="play" id="almost-nothing" class="gender-check">
-                    <label class="play" for="almost-nothing">
-                        Almost-nothing
-                    </label>
-                    <input type="radio" name="play" id="basics" class="gender-check">
-                    <label class="play" for="basics">
-                        Basics with 1 hand
-                    </label>
-                    <input type="radio" name="play" id="some-songs" class="gender-check">
-                    <label class="play" for="some-songs">
-                        Some songs with 2 hands
-                    </label>
-                    <input type="radio" name="play" id="lots-songs" class="gender-check">
-                    <label class="play" for="lots-songs">
-                        A lot of songs
-                    </label>
-                </div>
-            </div>
-            <div class="step step6">
-                <h1 class="step-title">Can <span class="child-name"></span> read rhythm symbols?</h1>
-                <div class="read-choice">
-                    <input type="radio" name="read" id="no" class="gender-check">
-                    <label class="read" for="no">
-                        NO
-                    </label>
-                    <input type="radio" name="read" id="yes" class="gender-check">
-                    <label class="read" for="yes">
-                        YES
-                    </label>
-                </div>
-            </div>
-            <div class="step step7">
-                <h1 class="step-title">Does <span class="child-name"></span> read music?</h1>
-                <div class="read-choice">
-                    <input type="radio" name="read-music" id="no-read" class="gender-check">
-                    <label class="read" for="no-read">
-                        NO
-                    </label>
-                    <input type="radio" name="read-music" id="yes-read" class="gender-check">
-                    <label class="read" for="yes-read">
-                        YES
-                    </label>
-                </div>
-            </div>
-            <div class="step step8">
-                <h1 class="step-title">Should <span class="child-name"></span> participate <br> in Competitions and rankings?</h1>
-                <div class="read-choice">
-                    <input type="radio" name="competition" id="competition-no" class="gender-check">
-                    <label class="read" for="competition-no">
-                        NO
-                    </label>
-                    <input type="radio" name="competition" id="competition-yes" class="gender-check">
-                    <label class="read" for="competition-yes">
-                        YES
-                    </label>
-                </div>
-            </div>
-            <div class="step step9">
-                <h1 class="step-title">Has <span class="child-name"></span> already a human teacher?</h1>
-                <div class="read-choice">
-                    <input type="radio" name="teacher" id="teacher-no" class="gender-check">
-                    <label class="read" for="teacher-no">
-                        NO
-                    </label>
-                    <input type="radio" name="teacher" id="teacher-yes" class="gender-check">
-                    <label class="read" for="teacher-yes">
-                        YES
-                    </label>
-                </div>
-            </div>
-            <div class="step step10">
-                <h1 class="step-title">Do you want to add another child?</h1>
-                <div class="read-choice">
-                    <input type="radio" name="another" id="another-no" class="gender-check">
-                    <label class="read" for="another-no">
-                        NO
-                    </label>
-                    <input type="radio" name="another" id="another-yes" class="gender-check">
-                    <label class="read" for="another-yes">
-                        YES
-                    </label>
-                </div>
-            </div>
-        </form>
-        <div class="steps-bottom">
-            <div class="step-arrow step-back">
-                <img src="../img/Left_arrow_icon.svg" alt="">
-            </div>
-            <p id="error"></p>
-            <div class="step-arrow step-next">
-                <img src="../img/Right_arrow_icon.svg" alt="">
+
+<div class="steps-container">
+    <div class="progress-container">
+        <div class="progress">
+            <div class="bar">
             </div>
         </div>
     </div>
-
-
-    <script src="<?= $this->url->get('js/kid/interview.js'); ?>"></script>
-</body>
-</html>
+    <form class="slider">
+        <div class="step step1">
+            <h1 class="step-title">Create your child's profile</h1>
+            <p class="step-text">
+                Tell us a bit about your little one so we can tailor the perfect
+                piano learning experience for her/his needs.
+            </p>
+            <p class="step-text">
+                This process should take about 2-3 minutes to complete
+            </p>
+            <button type="button" class="step1-btn">great, lets go!</button>
+        </div>
+        <div class="step step2">
+            <h1 class="step-title">What is your child's name</h1>
+            <input class="step-input" name="child-name" type="text" onchange="checkStep2()" oninput="checkStep2()" onkeypress="checkStep2()">
+            <div class="gender-choice">
+                <input type="radio" name="gender" id="female" class="gender-check">
+                <label class="gender-image" for="female">
+                    <img src="../img/Girl_icon.svg" alt="">
+                </label>
+                <input type="radio" name="gender" id="male" class="gender-check">
+                <label class="gender-image" for="male">
+                    <img src="../img/Boy_icon.svg" alt="">
+                </label>
+            </div>
+        </div>
+        <div class="step step3">
+            <h1 class="step-title"><span class="child-name"></span></h1>
+            <img class="step3-image girl-image" src="../img/zenska.PNG" alt="">
+            <img class="step3-image boy-image" src="../img/Boy_icon.svg" alt="">
+            <img class="dice-image" src="../img/Dice_icon.svg" alt="">
+        </div>
+        <div class="step step4">
+            <h1 class="step-title">What's your child's age?</h1>
+            <div class="age-choice">
+                <input type="radio" name="age" id="3" class="gender-check">
+                <label class="age-number" for="3">
+                    3
+                </label>
+                <input type="radio" name="age" id="4" class="gender-check">
+                <label class="age-number" for="4">
+                    4
+                </label>
+                <input type="radio" name="age" id="5" class="gender-check">
+                <label class="age-number" for="5">
+                    5
+                </label>
+                <input type="radio" name="age" id="6" class="gender-check">
+                <label class="age-number" for="6">
+                    6
+                </label>
+                <input type="radio" name="age" id="7" class="gender-check">
+                <label class="age-number" for="7">
+                    7
+                </label>
+            </div>
+        </div>
+        <div class="step step5">
+            <h1 class="step-title">What can <span class="child-name"></span> play on the piano</h1>
+            <div class="age-choice">
+                <input type="radio" name="play" id="almost-nothing" class="gender-check">
+                <label class="play" for="almost-nothing">
+                    Almost-nothing
+                </label>
+                <input type="radio" name="play" id="basics" class="gender-check">
+                <label class="play" for="basics">
+                    Basics with 1 hand
+                </label>
+                <input type="radio" name="play" id="some-songs" class="gender-check">
+                <label class="play" for="some-songs">
+                    Some songs with 2 hands
+                </label>
+                <input type="radio" name="play" id="lots-songs" class="gender-check">
+                <label class="play" for="lots-songs">
+                    A lot of songs
+                </label>
+            </div>
+        </div>
+        <div class="step step6">
+            <h1 class="step-title">Can <span class="child-name"></span> read rhythm symbols?</h1>
+            <div class="read-choice">
+                <input type="radio" name="read" id="no" class="gender-check">
+                <label class="read" for="no">
+                    NO
+                </label>
+                <input type="radio" name="read" id="yes" class="gender-check">
+                <label class="read" for="yes">
+                    YES
+                </label>
+            </div>
+        </div>
+        <div class="step step7">
+            <h1 class="step-title">Does <span class="child-name"></span> read music?</h1>
+            <div class="read-choice">
+                <input type="radio" name="read-music" id="no-read" class="gender-check">
+                <label class="read" for="no-read">
+                    NO
+                </label>
+                <input type="radio" name="read-music" id="yes-read" class="gender-check">
+                <label class="read" for="yes-read">
+                    YES
+                </label>
+            </div>
+        </div>
+        <div class="step step8">
+            <h1 class="step-title">Should <span class="child-name"></span> participate <br> in Competitions and rankings?</h1>
+            <div class="read-choice">
+                <input type="radio" name="competition" id="competition-no" class="gender-check">
+                <label class="read" for="competition-no">
+                    NO
+                </label>
+                <input type="radio" name="competition" id="competition-yes" class="gender-check">
+                <label class="read" for="competition-yes">
+                    YES
+                </label>
+            </div>
+        </div>
+        <div class="step step9">
+            <h1 class="step-title">Has <span class="child-name"></span> already a human teacher?</h1>
+            <div class="read-choice">
+                <input type="radio" name="teacher" id="teacher-no" class="gender-check">
+                <label class="read" for="teacher-no">
+                    NO
+                </label>
+                <input type="radio" name="teacher" id="teacher-yes" class="gender-check">
+                <label class="read" for="teacher-yes">
+                    YES
+                </label>
+            </div>
+        </div>
+        <div class="step step10">
+            <h1 class="step-title">Do you want to add another child?</h1>
+            <div class="read-choice">
+                <input type="radio" name="another" id="another-no" class="gender-check">
+                <label class="read" for="another-no">
+                    NO
+                </label>
+                <input type="radio" name="another" id="another-yes" class="gender-check">
+                <label class="read" for="another-yes">
+                    YES
+                </label>
+            </div>
+        </div>
+    </form>
+    <div class="steps-bottom">
+        <div class="step-arrow step-back">
+            <img src="../img/Left_arrow_icon.svg" alt="">
+        </div>
+        <p id="error"></p>
+        <div class="step-arrow step-next">
+            <img src="../img/Right_arrow_icon.svg" alt="">
+        </div>
+    </div>
+</div>
